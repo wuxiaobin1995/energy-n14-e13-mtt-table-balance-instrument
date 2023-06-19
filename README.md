@@ -1,11 +1,11 @@
 <!--
  * @Author      : Mr.bin
  * @Date        : 2023-06-16 21:37:05
- * @LastEditTime: 2023-06-16 22:39:38
+ * @LastEditTime: 2023-06-19 20:13:32
  * @Description : energy-n14-e13-mtt-table-balance-instrument
 -->
 
-# 台式平衡康复训练仪-单机版
+# 台式平衡康复训练仪-MTT 版
 
 ## 串口定义
 
