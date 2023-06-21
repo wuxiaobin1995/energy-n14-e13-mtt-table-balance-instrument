@@ -1,7 +1,7 @@
 /*
  * @Author      : Mr.bin
  * @Date        : 2023-06-16 21:36:42
- * @LastEditTime: 2023-06-21 18:03:07
+ * @LastEditTime: 2023-06-21 21:43:32
  * @Description : 路由
  */
 import Vue from 'vue'
@@ -192,9 +192,25 @@ const routes = [
         name: 'dynamic-stability-measure',
         component: () => import('@/views/test-mode/dynamic-stability/measure'),
         meta: ['动态稳定测试-具体测量']
-      }
+      },
 
       /* 训练 */
+      // 静态平衡训练-具体测量
+      {
+        path: 'static-equilibrium-measure',
+        name: 'static-equilibrium-measure',
+        component: () =>
+          import('@/views/train-mode/static-equilibrium/measure'),
+        meta: ['静态平衡训练-具体测量']
+      },
+      // 动态平衡训练-具体测量
+      {
+        path: 'dynamic-equilibrium-measure',
+        name: 'dynamic-equilibrium-measure',
+        component: () =>
+          import('@/views/train-mode/dynamic-equilibrium/measure'),
+        meta: ['动态平衡训练-具体测量']
+      }
     ]
   },
 
