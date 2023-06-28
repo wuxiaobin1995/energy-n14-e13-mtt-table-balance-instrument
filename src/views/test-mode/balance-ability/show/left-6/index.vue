@@ -59,7 +59,7 @@ export default {
 
       /* 语音相关 */
       audioOpen: this.$store.state.voiceSwitch,
-      audioSrc: path.join(__static, `narrate/mandarin/l6.mp3`),
+      audioSrc: path.join(__static, `narrate/mandarin/Test/l6.mp3`),
 
       /* 图形相关变量 */
       myChart: null,

@@ -59,6 +59,9 @@
 </template>
 
 <script>
+/* 路径模块 */
+import path from 'path'
+
 /* 串口通信库 */
 import SerialPort from 'serialport'
 import Readline from '@serialport/parser-readline'

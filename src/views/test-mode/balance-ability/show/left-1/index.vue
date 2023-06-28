@@ -1,7 +1,7 @@
 <!--
  * @Author      : Mr.bin
  * @Date        : 2022-12-24 17:52:20
- * @LastEditTime: 2023-06-21 15:59:24
+ * @LastEditTime: 2023-06-28 10:57:32
  * @Description : 一档睁眼直立-左腿
 -->
 <template>
@@ -59,7 +59,7 @@ export default {
 
       /* 语音相关 */
       audioOpen: this.$store.state.voiceSwitch,
-      audioSrc: path.join(__static, `narrate/mandarin/l1.mp3`),
+      audioSrc: path.join(__static, `narrate/mandarin/Test/l1.mp3`),
 
       /* 图形相关变量 */
       myChart: null,

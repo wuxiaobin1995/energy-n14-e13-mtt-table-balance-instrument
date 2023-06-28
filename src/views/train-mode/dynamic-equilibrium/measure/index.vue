@@ -1,7 +1,7 @@
 <!--
  * @Author      : Mr.bin
  * @Date        : 2023-06-21 21:44:58
- * @LastEditTime: 2023-06-21 21:47:59
+ * @LastEditTime: 2023-06-28 11:13:22
  * @Description : 动态平衡训练-具体测量
 -->
 <template>
@@ -108,7 +108,7 @@ export default {
 
       /* 其他 */
       side: this.$store.state.settings[0].side, // 患侧
-      trainPosture: this.$store.state.settings[0].trainPosture, // 训练姿势
+      trainPosture: this.$store.state.settings[0].trainPostureDynamic, // 训练姿势
       coefficient: this.$store.state.settings[0].coefficient, // 晃动系数
       num: this.$store.state.settings[0].num, // 组数
       nowNum: 0, // 实时组数
@@ -551,10 +551,10 @@ export default {
         let route = ''
         switch (this.$store.state.settings[0].pattern) {
           case '静态平衡训练':
-            settingsRouter.push('static-equilibrium-measure')
+            route = 'static-equilibrium-measure'
             break
           case '动态平衡训练':
-            settingsRouter.push('dynamic-equilibrium-measure')
+            route = 'dynamic-equilibrium-measure'
             break
           default:
             break
