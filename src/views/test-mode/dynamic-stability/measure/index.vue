@@ -414,13 +414,56 @@ export default {
           'years'
         )
         /* 数据 */
+        // 计算颜色占比
+        const greenArray = []
+        const yellowArray = []
+        const redArray = []
+        const greenRound = parseFloat((this.maxAction * 0.15).toFixed(1)) // 绿圈的位置
+        const yellowRound = parseFloat((this.maxAction * 0.3).toFixed(1)) // 黄圈的位置
+        let l = 0
+        for (let i = 0; i < this.trajectoryArray.length; i++) {
+          const itemArrray = this.trajectoryArray[i]
+          l = Math.sqrt(Math.pow(itemArrray[0], 2) + Math.pow(itemArrray[1], 2))
+          if (l <= greenRound) {
+            greenArray.push(1)
+          } else if (l > greenRound && l <= yellowRound) {
+            yellowArray.push(1)
+          } else {
+            redArray.push(1)
+          }
+        }
+        const greenRate = parseFloat(
+          ((greenArray.length / this.trajectoryArray.length) * 100).toFixed(1)
+        )
+        const yellowRate = parseFloat(
+          ((yellowArray.length / this.trajectoryArray.length) * 100).toFixed(1)
+        )
+        const redRate = parseFloat(
+          ((redArray.length / this.trajectoryArray.length) * 100).toFixed(1)
+        )
+        // 计算背景图
+        const boundary = this.maxAction + parseInt(this.maxAction * 0.2) // 方形
+        const oneR = parseFloat((this.maxAction * 0.15).toFixed(1)) // 绿色圆半径
+        const twoR = parseFloat((this.maxAction * 0.3).toFixed(1)) // 黄色圆半径
+        const threeR = this.maxAction // 红色圆半径
+        const oneRound = setCircle(0, 0, oneR) // 绿色圆数组
+        const twoRound = setCircle(0, 0, twoR) // 黄色圆数组
+        const threeRound = setCircle(0, 0, threeR) // 红色圆数组
+
         const obj = {
           pattern: '动态稳定测试',
           side: this.affectedSide, // 患侧（左腿、右腿）
           time: this.time, // 测试时长
           coefficient: this.coefficient, // 晃动系数
           currentAge: currentAge, // 完成该次测试时的岁数
-          trajectoryArray: this.trajectoryArray // 轨迹数组
+          trajectoryArray: this.trajectoryArray, // 轨迹数组
+          greenRate: greenRate, // 绿色占比
+          yellowRate: yellowRate, // 黄色占比
+          redRate: redRate, // 红色占比
+          boundary: boundary, // 方形
+          oneRound: oneRound, // 绿色圆数组
+          twoRound: twoRound, // 黄色圆数组
+          threeRound: threeRound // 红色圆数组
         }
 
         /* 暂存至 sessionStorage */
