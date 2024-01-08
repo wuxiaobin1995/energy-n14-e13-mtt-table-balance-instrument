@@ -1,7 +1,7 @@
 <!--
  * @Author      : Mr.bin
  * @Date        : 2023-06-21 13:56:57
- * @LastEditTime: 2023-06-21 13:59:39
+ * @LastEditTime: 2024-01-08 15:06:15
  * @Description : 顶部栏
 -->
 <template>
@@ -33,7 +33,7 @@
 
       <!-- 订单号 -->
       <div class="order-id">
-        <div class="item">订单号：{{ activeOrderId }}</div>
+        <div class="item">任务号：{{ activeOrderId }}</div>
       </div>
 
       <!-- 当前登录用户的姓名 -->
